@@ -4,7 +4,7 @@ import os
 from flask_cors import CORS
 
 # Caminho do arquivo Excel
-arquivo_excel = "C:\\Users\\lorra\\Desktop\\Linda Joia\\Vendas\\Api python.xlsx"
+arquivo_excel = "Api python.xlsx"
 
 # Criar API Flask
 app = Flask(__name__)
@@ -90,8 +90,8 @@ def buscar_por_referencia():
 
     return jsonify(resultado.to_dict(orient="records"))
 
-
+PORT = int(os.environ.get("PORT", 10000))
 # ✅ TESTE 1️⃣1️⃣: Rodar a API de forma acessível
 if __name__ == '__main__':
     print("🚀 Iniciando API...")
-    app.run(host="0.0.0.0", port=8080)        # Porta alterada para evitar bloqueios 
+    app.run(host="0.0.0.0", port=PORT)        # Porta alterada para evitar bloqueios 
