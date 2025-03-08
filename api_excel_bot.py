@@ -70,7 +70,8 @@ def buscar_por_referencia():
     if not referencia:
         return jsonify({"erro": "Informe uma referência"}), 400
 
-    referencia = referencia.strip()
+    referencia = referencia.strip().lstrip("0")  # Remove zeros à esquerda
+
 
     # TESTE 8️⃣: Exibir o DataFrame antes da busca
     print("📊 DataFrame antes da busca:")
